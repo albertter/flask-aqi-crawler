@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>数据抓取器</title>
+</head>
+<body>
+<div class="jump_1">
+    <a href="aqi">全国各个城市AQI排行</a>
+</div>
+<div align="center">
+    <h2>数据抓取器</h2>
+    <form method="POST">
+        URL：<input type="text" name="url">
+        <br>
+        关键字：<input type="text" name="keyword">
+        <br><br>
+        <input type="submit" value="查询">
+        <input type="reset" value="重置">
+    </form>
+    <br><br>
+    <div class="result">
+        <table border="1">
+            <tr>
+                <th>标题</th>
+                <th>关键字</th>
+                <th>URL</th>
+            </tr>
+            {% for i in result %}
+                <tr>
+                    <th>{{ i[0] }}</th>
+                    <th>{{ keyword }}</th>
+                    <th><a class="url_href" href="{{ i[1] }}">{{ i[1] }}</a></th>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
