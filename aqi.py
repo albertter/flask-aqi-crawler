@@ -15,6 +15,7 @@ def get_city_aqi(city_pingyin):
         div_content = div_list[i]
         caption = div_content.find('div', {'class': 'caption'}).text.strip()  # 标题
         value = div_content.find('div', {'class': 'value'}).text.strip()  # value
+        value = float(value)
         city_aqi.append((caption, value))
     return city_aqi
 
@@ -45,9 +46,9 @@ def main():
         city_pingyin = city[1]
 
         city_aqi = get_city_aqi(city_pingyin)
-        # print(city_aqi)
+        print(city_aqi)
         result.append((city_name, city_aqi))
-        print('当前城市是{0}，污染物是{1}'.format(city_name, city_aqi))
+        # print('当前城市是{0}，污染物是{1}'.format(city_name, city_aqi))
     result = sorted(result, key = lambda k: k[1][0][1])
     print(result)
 

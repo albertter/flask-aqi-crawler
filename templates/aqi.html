@@ -11,7 +11,17 @@
 </div>
 <div align="center">
     <form method="POST">
-        输入TOP X<input type="text" name="num"><br>
+        输入TOP X<input type="text" name="num">
+        <select name="pollutant">
+            <option value="0">AQI</option>
+            <option value="1">PM2.5/1h</option>
+            <option value="2">PM10/1h</option>
+            <option value="3">CO/1h</option>
+            <option value="4">NO2/1h</option>
+            <option value="5">O3/1h</option>
+            <option value="6">O3/8h</option>
+            <option value="7">SO2/1h</option>
+        </select>
         <input type="submit" value="查询"><br>
     </form>
 
