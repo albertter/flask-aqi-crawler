@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, redirect
 from crawler import crawler
 from aqi import get_city_aqi
 from aqi import get_all_cities
-import tablib
 
 app = Flask(__name__)
 
